@@ -11,11 +11,26 @@ public class Movement : MonoBehaviour
     public float jump;
 
     public float y;
+    public float x;
+    public float z;
+
+    public Vector3 right;
+    public Vector3 forward;
 
     // Update is called once per frame
     void Update()
-    {
-        Vector3 move = transform.right * Input.GetAxis("Horizontal") + transform.forward * Input.GetAxis("Vertical");
+    {   
+        if( controller.isGrounded && y < 0 )
+        {
+            y = -1f;
+            x = Input.GetAxis("Horizontal");
+            z = Input.GetAxis("Vertical");
+        
+            right = transform.right;
+            forward = transform.forward;
+        }
+
+        Vector3 move = right * x + forward * z;
 
         move *= speed;
 
