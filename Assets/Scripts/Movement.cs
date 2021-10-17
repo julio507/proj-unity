@@ -22,8 +22,11 @@ public class Movement : MonoBehaviour
         Vector3.forward,
         Vector3.left,
         Vector3.left + Vector3.forward,
+        Vector3.left + Vector3.back,
         Vector3.right,
-        Vector3.right + Vector3.forward
+        Vector3.right + Vector3.forward,
+        Vector3.right + Vector3.back,
+        Vector3.back
     };
 
     bool raycastWall()
@@ -51,6 +54,7 @@ public class Movement : MonoBehaviour
         if (controller.isGrounded && y < 0)
         {
             y = -1f;
+
             x = Input.GetAxis("Horizontal");
             z = Input.GetAxis("Vertical");
 
@@ -62,44 +66,50 @@ public class Movement : MonoBehaviour
 
         Vector3 move = right * x + forward * z;
 
-        move *= speed;
-
         move.y = y;
+
+        if (Input.GetButtonDown("Jump") && ( controller.isGrounded || isWallruning ) )
+        {
+            move.y = Mathf.Sqrt(jump * -2f * gravity);
+
+            if( isWallruning )
+            {
+                right = transform.right;
+                forward = transform.forward;
+
+                move.x = right.x * x + forward.x * z;
+                move.z = right.z * x + forward.z * z;
+            }
+        }
 
         if (isWallruning)
         {
-            if (Input.GetButtonDown("Jump"))
-            {
-                isWallruning = false;
+            move.y += gravity/2 * Time.deltaTime;
 
-                move.y = Mathf.Sqrt(jump * -2f * gravity);
-            
-                move.y += gravity * Time.deltaTime;
-            }
-
-            else
-            {
-                move.y *= Time.deltaTime;
-
-                move.x *= 2;
-
-                Debug.Log("Wallrunnig");
-            }
+            Debug.Log("Wallrunnig");
         }
 
         else
         {
-            if (Input.GetButtonDown("Jump") && controller.isGrounded)
-            {
-                move.y = Mathf.Sqrt(jump * -2f * gravity);
-            }
-
             move.y += gravity * Time.deltaTime;
 
             Debug.Log("Normal");
         }
 
         y = move.y;
+
+        if( speed > 10 && !isWallruning )
+        {
+            speed -= 1 * Time.deltaTime;
+        }
+
+        else if( speed < 15 )
+        {
+            speed += 20 * Time.deltaTime;
+        }
+
+        move.x *= speed;
+        move.z *= speed;
 
         controller.Move(move * Time.deltaTime);
     }
