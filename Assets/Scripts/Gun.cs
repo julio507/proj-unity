@@ -8,11 +8,11 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
-        canShoot = false;
+        //canShoot = false;
 
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 1000))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
         {
             if (hit.collider.CompareTag("Enemy"))
             {
