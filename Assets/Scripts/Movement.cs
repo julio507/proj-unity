@@ -51,6 +51,13 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if( transform.position.y < -10 )
+        {
+            controller.enabled = false;
+            controller.transform.position = new Vector3( 0, 1.5f, 0 );
+            controller.enabled = true;   
+        }
+
         if (controller.isGrounded && y < 0)
         {
             y = -1f;
