@@ -68,11 +68,11 @@ public class Movement : MonoBehaviour
 
         move.y = y;
 
-        if (Input.GetButtonDown("Jump") && ( controller.isGrounded || isWallruning ) )
+        if (Input.GetButtonDown("Jump") && (controller.isGrounded || isWallruning))
         {
             move.y = Mathf.Sqrt(jump * -2f * gravity);
 
-            if( isWallruning )
+            if (isWallruning)
             {
                 right = transform.right;
                 forward = transform.forward;
@@ -84,7 +84,7 @@ public class Movement : MonoBehaviour
 
         if (isWallruning)
         {
-            move.y += gravity/2 * Time.deltaTime;
+            move.y += gravity / 2 * Time.deltaTime;
 
             Debug.Log("Wallrunnig");
         }
@@ -92,18 +92,16 @@ public class Movement : MonoBehaviour
         else
         {
             move.y += gravity * Time.deltaTime;
-
-            Debug.Log("Normal");
         }
 
         y = move.y;
 
-        if( speed > 10 && !isWallruning )
+        if (speed > 10 && !isWallruning)
         {
             speed -= 1 * Time.deltaTime;
         }
 
-        else if( speed < 15 )
+        else if (speed < 15)
         {
             speed += 20 * Time.deltaTime;
         }
