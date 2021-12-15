@@ -6,6 +6,8 @@ public class Movement : MonoBehaviour
 {
     public CharacterController controller;
 
+    public Animator animator;
+
     public float speed;
     public float gravity;
     public float jump;
@@ -117,5 +119,10 @@ public class Movement : MonoBehaviour
         move.z *= speed;
 
         controller.Move(move * Time.deltaTime);
+
+        Debug.Log( Input.GetAxis( "Vertical" ) != 0 );
+
+        animator.SetBool( "isRunning", Input.GetAxis( "Vertical" ) != 0 );
+        animator.SetBool( "isJumping", !controller.isGrounded  );
     }
 }
