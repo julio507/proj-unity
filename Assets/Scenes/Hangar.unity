@@ -294,6 +294,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d4733005e0a5c148930e8816fba0b6a, type: 3}
+--- !u!95 &305174285 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 518228451491747471, guid: 78dc100a9331cc647872995505135540, type: 3}
+  m_PrefabInstance: {fileID: 1800078745}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &420014878
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,6 +632,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6095618430503878265, guid: 78dc100a9331cc647872995505135540, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1268769249}
+    - target: {fileID: 6095618430503878265, guid: 78dc100a9331cc647872995505135540, type: 3}
+      propertyPath: isjumping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6528779649016075855, guid: 78dc100a9331cc647872995505135540, type: 3}
+      propertyPath: m_Name
+      value: playere2
+      objectReference: {fileID: 0}
     - target: {fileID: 8288360460605473737, guid: 78dc100a9331cc647872995505135540, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
@@ -736,12 +753,21 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 607093862}
+    - target: {fileID: 8018997118201714619, guid: d74c0392cd7ed404eb5e6b845da0a6d0, type: 3}
+      propertyPath: footstep
+      value: 
+      objectReference: {fileID: 607093859}
     - target: {fileID: 8018997118201714630, guid: d74c0392cd7ed404eb5e6b845da0a6d0, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d74c0392cd7ed404eb5e6b845da0a6d0, type: 3}
+--- !u!95 &542009129 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 518228451491747471, guid: 78dc100a9331cc647872995505135540, type: 3}
+  m_PrefabInstance: {fileID: 1529588298}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &543967390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -861,6 +887,102 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8018997118201714630, guid: d74c0392cd7ed404eb5e6b845da0a6d0, type: 3}
   m_PrefabInstance: {fileID: 527229282}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &607093859
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607093858}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d111d8286ce7aa244a3bf933920c7cc5, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &607093862
 Animator:
   serializedVersion: 3
@@ -1431,6 +1553,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d4733005e0a5c148930e8816fba0b6a, type: 3}
+--- !u!95 &1268769249 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 518228451491747471, guid: 78dc100a9331cc647872995505135540, type: 3}
+  m_PrefabInstance: {fileID: 512684943}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1326985879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1813,6 +1940,14 @@ PrefabInstance:
     - target: {fileID: 2466251212010755519, guid: 78dc100a9331cc647872995505135540, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095618430503878265, guid: 78dc100a9331cc647872995505135540, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 542009129}
+    - target: {fileID: 6528779649016075855, guid: 78dc100a9331cc647872995505135540, type: 3}
+      propertyPath: m_Name
+      value: playere3
       objectReference: {fileID: 0}
     - target: {fileID: 8288360460605473737, guid: 78dc100a9331cc647872995505135540, type: 3}
       propertyPath: m_Name
@@ -2312,6 +2447,18 @@ PrefabInstance:
     - target: {fileID: 2466251212010755519, guid: 78dc100a9331cc647872995505135540, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095618430503878265, guid: 78dc100a9331cc647872995505135540, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 305174285}
+    - target: {fileID: 6095618430503878265, guid: 78dc100a9331cc647872995505135540, type: 3}
+      propertyPath: isRunnig
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6528779649016075855, guid: 78dc100a9331cc647872995505135540, type: 3}
+      propertyPath: m_Name
+      value: playere1
       objectReference: {fileID: 0}
     - target: {fileID: 8288360460605473737, guid: 78dc100a9331cc647872995505135540, type: 3}
       propertyPath: m_Name
