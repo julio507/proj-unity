@@ -8,6 +8,8 @@ public class Movement : MonoBehaviour
 
     public Animator animator;
 
+    public AudioSource footstep;
+
     public float speed;
     public float gravity;
     public float jump;
@@ -124,5 +126,12 @@ public class Movement : MonoBehaviour
 
         animator.SetBool( "isRunning", Input.GetAxis( "Vertical" ) != 0 );
         animator.SetBool( "isJumping", !controller.isGrounded  );
+
+        if( Input.GetAxis( "Vertical" ) != 0 && controller.isGrounded && !footstep.isPlaying )
+        {
+            footstep.volume = Random.Range( 0.8f, 1 );
+            footstep.pitch = Random.Range( 0.8f, 1.1f );
+            footstep.Play();
+        }
     }
 }
